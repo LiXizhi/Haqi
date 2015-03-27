@@ -2,3 +2,4 @@
 *.pkg
 *.db
 *.so
+*.mem

@@ -18,7 +18,7 @@ call %android_buildtool_dir%aapt add %apk_file_name% lib/armeabi/libparaenginemo
 @rem call %android_buildtool_dir%aapt add %apk_file_name% lib/armeabi/gdbserver
 
 REM Sign your app with your private key using jarsigner:
-jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore -keypass paracraft %apk_file_name% paracraft
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore -storepass paracraft %apk_file_name% paracraft
 
 REM Verify that your APK is signed. For example:
 jarsigner -verify -verbose -certs %apk_file_name%
