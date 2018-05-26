@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- BEGIN_INCLUDE(manifest) -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.ParaEngine.Haqi"
-      android:versionCode="4"
-      android:versionName="1.3">
-
-    <uses-sdk android:minSdkVersion="11"/>
-    <uses-feature android:glEsVersion="0x00020000" />
-	<uses-feature android:name="android.hardware.sensor.accelerometer"/>
-
-    
-    
-    <application 
-        android:allowBackup="true"
-        android:label="@string/app_name"
-        android:icon="@drawable/icon">
-					 
-        <!-- Tell the name of our .so -->
-        <meta-data android:name="android.app.lib_name"
-                  android:value="paraenginemobile" />
-		<!--正常启动-->		  
-        <activity android:name="org.cocos2dx.lua.AppActivity"
-                  android:label="@string/app_name"
-                  android:screenOrientation="landscape"
-                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-                  android:configChanges="orientation">
+        package="com.tatfook.haqi"
+        android:versionCode="1"
+        android:versionName="1.0">
+    <!-- This is the platform API where NativeActivity was introduced. -->
+    <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="19" />
+    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CLEAR_APP_USER_DATA" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"></uses-permission>
+  
+  <!-- This .apk has no Java code itself, so set hasCode to False. -->
+    <application android:label="@string/app_name" android:hasCode="True" android:icon="@drawable/ic_launcher" android:name="com.tatfook.paracraft.ParaEngineApplication">
+        <!-- Consider:  com.tatfook.paracraft.AppActivity or android.app.NativeActivity -->
+        <activity android:name="com.tatfook.paracraft.AppActivity"
+                android:launchMode="standard"
+                android:label="@string/app_name"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                android:screenOrientation="landscape" >
+            <!-- Tell NativeActivity the name of our .so -->
+            <meta-data android:name="android.app.lib_name"
+                    android:value="Paracraft" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter> 
+          <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="paracraft" />
+          </intent-filter>
         </activity>
-    </application>
 
-    <supports-screens android:anyDensity="true"
-                      android:smallScreens="true"
-                      android:normalScreens="true"
-                      android:largeScreens="true"
-                      android:xlargeScreens="true"/>
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>  
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>  
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>  
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>  
-    
-  	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
- 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+      <meta-data android:name="PlguinWrapper"
+              android:value="@string/PluginInfo"/>
+    </application>
 </manifest> 
+<!-- END_INCLUDE(manifest) -->

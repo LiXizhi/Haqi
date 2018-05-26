@@ -3,3 +3,11 @@
 *.db
 *.so
 *.mem
+proj.android/assets/res/*
+proj.android/assets/res/config.txt
+proj.android/classes.dex
+*.keystore
+
+
+
+

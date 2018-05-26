@@ -16,6 +16,9 @@ Date: 2015.3.23
 1. run ./proj/android/MakeAndroidAPK.bat (default code sign password is paracraft)
 2. my_app_android.final.apk will be generated, which is signed and ready for publishing. 
 
+---+++ Upgrade APK
+1. Edit AndrioidManifest.xml and change the android:versionCode and android:versionName 
+2. Rebuild APK
 
 ---+++ FAQ
 In case of errors, look at the source code of *.bat and make necessary changes. 
