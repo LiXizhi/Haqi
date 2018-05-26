@@ -1,3 +1,0 @@
--- this file is only used for mobile plaform where command line is not possible
--- change the commandline to match your application boot file. 
-cmdline=bootstrapper="script/apps/Aries/bootstrapper.xml" noupdate="true" version="kids"
